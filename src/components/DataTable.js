@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Table, Button } from 'reactstrap';
+import { Table, Button, Row, Col } from 'reactstrap';
 import { EMPLOYEES_API_URL } from '../constants';
 
 class DataTable extends Component {
@@ -8,9 +8,10 @@ class DataTable extends Component {
         return <Table>
             <thead>
                 <tr>
-                    <td>ID</td>
-                    <td>First Name</td>
-                    <td>Last Name</td>
+                    <th>ID</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Actions</th>
                 </tr>
             </thead>
             <tbody>
@@ -29,9 +30,18 @@ class DataTable extends Component {
                             <td>
                                 {item.lastName}
                             </td>
+                            <td>
+                                <Button outline color="warning" onClick={() => this.editItem(item.id)}>Edit</Button> {' '}
+                                <Button outline color="danger" onClick={() => this.deleteItem(item.id)}>Delete</Button>
+                            </td>
                         </tr>
                     ))}
             </tbody>
+            <tfooter>
+                <tr>
+                    <td colSpan="6"><Button outline color="success" onClick={() => this.createItem()}>Add Employee</Button></td>
+                </tr>
+            </tfooter>
         </Table>;
     }
 

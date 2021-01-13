@@ -15,7 +15,7 @@ class AppHeader extends Component {
                     <NavLink href="/">EMPLOYEES</NavLink>
                 </NavItem>
                 <NavItem>
-                    <NavLink href="/">ASSIGNMENTS</NavLink>
+                    <NavLink href="/">REVIEWS</NavLink>
                 </NavItem>
             </Nav>
         </Navbar>;
