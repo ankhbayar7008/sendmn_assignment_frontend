@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
-import { Table, Button, Row, Col } from 'reactstrap';
-import { EMPLOYEES_API_URL } from '../constants';
+import { Table, Button } from 'reactstrap';
+//import { EMPLOYEES_API_URL } from '../../constants';
 
-class DataTable extends Component {
+class ReviewDataTable extends Component {
     render() {
         const items = this.props.items;
-        return <Table>
+        return <div><Table>
             <thead>
                 <tr>
-                    <th>ID</th>
-                    <th>First Name</th>
-                    <th>Last Name</th>
+                    <th>#</th>
+                    <th>Employee Name</th>
+                    <th>Review Title</th>
                     <th>Actions</th>
                 </tr>
             </thead>
@@ -31,20 +31,19 @@ class DataTable extends Component {
                                 {item.lastName}
                             </td>
                             <td>
+                                <Button outline color="success" onClick={() => this.editItem(item.id)}>View</Button> {' '}
                                 <Button outline color="warning" onClick={() => this.editItem(item.id)}>Edit</Button> {' '}
                                 <Button outline color="danger" onClick={() => this.deleteItem(item.id)}>Delete</Button>
                             </td>
                         </tr>
                     ))}
             </tbody>
-            <tfooter>
-                <tr>
-                    <td colSpan="6"><Button outline color="success" onClick={() => this.createItem()}>Add Employee</Button></td>
-                </tr>
-            </tfooter>
-        </Table>;
+        </Table>
+            <hr />
+            <Button outline color="success" onClick={() => this.createItem()}>Add Review</Button>
+            </div>;
     }
 
 }
 
-export default DataTable;
+export default ReviewDataTable;
