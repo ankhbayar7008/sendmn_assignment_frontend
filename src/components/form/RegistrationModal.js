@@ -1,27 +1,31 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component, Fragment, useState } from 'react';
 import { Button, Modal, ModalHeader, ModalBody } from 'reactstrap';
 import RegistrationForm from './RegistrationForm';
+
 class RegistrationModal extends Component {
     state = {
         modal: false
     }
+
     toggle = () => {
         this.setState(previous => ({
             modal: !previous.modal
         }));
     }
+
+
     render() {
         const isNew = this.props.isNew;
-        let title = 'Edit User';
+
+        let title = 'Edit Employee';
         let button = '';
         if (isNew) {
-            title = 'Add User';
-            button = <Button
+            title = 'Add Employee';
+            button = <Button outline
                 color="success"
-                onClick={this.toggle}
-                style={{ minWidth: "200px" }}>Add</Button>;
+                onClick={this.toggle}>Add Employee</Button>;
         } else {
-            button = <Button
+            button = <Button outline
                 color="warning"
                 onClick={this.toggle}>Edit</Button>;
         }
@@ -31,8 +35,8 @@ class RegistrationModal extends Component {
                 <ModalHeader toggle={this.toggle}>{title}</ModalHeader>
                 <ModalBody>
                     <RegistrationForm
-                        addUserToState={this.props.addUserToState}
-                        updateUserIntoState={this.props.updateUserIntoState}
+                        createEmployee={this.props.createEmployee}
+                        updateEmployee={this.props.updateEmployee}
                         toggle={this.toggle}
                         user={this.props.user} />
                 </ModalBody>

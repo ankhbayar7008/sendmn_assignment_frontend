@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Col, Container, Row } from 'reactstrap';
 import EmployeeDataTable from './dataTables/EmployeeDataTable';
 import { EMPLOYEES_API_URL } from '../constants';
+import RegistrationModal from './form/RegistrationModal';
 
 
 class Employees extends Component {
@@ -19,6 +20,21 @@ class Employees extends Component {
             .catch(err => console.log(err));
     }
 
+    addEmployeeToState = employee => {
+        this.setState(previous => ({
+            items: [...previous.items, employee]
+        }));
+    }
+
+    updateState = (id) => {
+        this.getItems();
+    }
+
+    deleteEmployee = id => {
+        const updated = this.state.items.filter(item => item.id !== id);
+        this.setState({ items: updated })
+    }
+
     render() {
         return <Container style={{ paddingTop: "100px" }}>
             <Row>
@@ -28,7 +44,14 @@ class Employees extends Component {
             </Row>
             <Row>
                 <Col>
-                    <EmployeeDataTable items={this.state.items} />
+                    <EmployeeDataTable items={this.state.items}
+                        updateState={this.updateState}
+                        deleteEmployee={this.deleteEmployee} />
+                </Col>
+            </Row>
+            <Row>
+                <Col>
+                    <RegistrationModal isNew={true} addEmployeeToState={this.addEmployeeToState} />
                 </Col>
             </Row>
         </Container>

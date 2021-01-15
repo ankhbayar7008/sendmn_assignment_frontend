@@ -30,27 +30,27 @@ class Home extends Component {
                             Total Employees
                         </CardTitle>
                         <CardText style={{ textAlign: "right" }}>
-                            <h2>15</h2>
+                            <h2>0</h2>
                         </CardText>
                     </Card>
                 </Col>
                 <Col>
                     <Card body inverse color="primary">
                         <CardTitle>
-                            Total Assignments
+                            Total Reviews
                         </CardTitle>
                         <CardText style={{ textAlign: "right" }}>
-                            <h2>15</h2>
+                            <h2>0</h2>
                         </CardText>
                     </Card>
                 </Col>
                 <Col>
                     <Card body inverse color="success">
                         <CardTitle>
-                            Total Reviews
+                            Total Assignments
                         </CardTitle>
                         <CardText style={{ textAlign: "right" }}>
-                            <h2>15</h2>
+                            <h2>0</h2>
                         </CardText>
                     </Card>
                 </Col>

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Table, Button } from 'reactstrap';
 //import { EMPLOYEES_API_URL } from '../../constants';
 
-class ReviewDataTable extends Component {
+class AssignmentDataTable extends Component {
     render() {
         const items = this.props.items;
         return <div><Table>
@@ -17,7 +17,7 @@ class ReviewDataTable extends Component {
             <tbody>
                 {!items || items.length <= 0 ?
                     <tr>
-                        <td colSpan="6" align="center"><b>No reviews to list</b></td>
+                        <td colSpan="6" align="center"><b>No assignment to list</b></td>
                     </tr>
                     : items.map(item => (
                         <tr key={item.id}>
@@ -40,10 +40,10 @@ class ReviewDataTable extends Component {
             </tbody>
         </Table>
             <hr />
-            <Button outline color="success" onClick={() => this.createItem()}>Add Review</Button>
+            <Button outline color="success" onClick={() => this.createItem()}>Add Assignment</Button>
             </div>;
     }
 
 }
 
-export default ReviewDataTable;
+export default AssignmentDataTable;

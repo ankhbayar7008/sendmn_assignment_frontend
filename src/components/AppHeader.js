@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import Home from './Home';
 import Employees from './Employees';
 import Reviews from './Reviews';
+import Assignments from './Assignments';
 
 
 class AppHeader extends Component {
@@ -14,19 +15,10 @@ class AppHeader extends Component {
                 <Navbar color="light" expand="md">
                     <Nav className="" navbar>
                         <NavItem>
-                            <NavLink>
-                                <Link to="/">HOME</Link>
-                            </NavLink>
+                            <NavLink href="/">HOME</NavLink>
                         </NavItem>
                         <NavItem>
-                            <NavLink>
-                                <Link to="/employees">EMPLOYEES</Link>
-                            </NavLink>
-                        </NavItem>
-                        <NavItem>
-                            <NavLink>
-                                <Link to="/reviews">REVIEWS</Link>
-                            </NavLink>
+                            <NavLink href="/employees">EMPLOYEES</NavLink>
                         </NavItem>
                     </Nav>
                 </Navbar>
@@ -36,6 +28,9 @@ class AppHeader extends Component {
                     </Route>
                     <Route path="/reviews">
                         <Reviews />
+                    </Route>
+                    <Route path="/assignments">
+                        <Assignments />
                     </Route>
                     <Route path="/">
                         <Home />

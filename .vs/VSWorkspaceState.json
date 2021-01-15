@@ -3,9 +3,10 @@
     "",
     "\\src",
     "\\src\\components",
+    "\\src\\components\\dataTables",
     "\\src\\components\\form",
     "\\src\\constants"
   ],
-  "SelectedNode": "\\src\\constants\\index.js",
+  "SelectedNode": "\\src\\index.js",
   "PreviewInSolutionExplorer": false
 }
